@@ -197,3 +197,96 @@ c2 = avg(100, 200);
 /*####################################################################################### */
 
 // Break and Continue Statement:
+//Break Examples:
+// for (let i = 1; i <= 5; i++) {
+//     if (i === 3) {
+//         break; // terminates the loop when i equals 3
+//     }
+//     console.log(i);
+// }
+
+
+
+// //Continue example:
+// let i = 0;
+// while (i < 5) {
+//     i++;
+//     if (i === 3) {
+//         continue; // skips the iteration when i equals 3
+//     }
+//     console.log(i);
+// }
+
+//In this example, when i becomes equal to 3, the continue statement is encountered,
+//and the current iteration is skipped. The loop continues with the next iteration.
+
+/*############################################################################################ */
+
+
+
+// let myArr = ["Coke", "Fanta", "Sprite", 77, null, true];
+// Array Methods in Javascript
+//console.log(myArr.length); //--> Returning the length of the array.
+//myArr.push("Aayush") //---> Returning Value Aayush to the Array
+//myArr.pop() //---> Removing last element from array
+//myArr.shift() //---> Removing first element from array
+// const newLen = myArr.unshift("Aayush")
+// console.log(newLen)
+
+// console.log(myArr);
+
+// Note: Explore other methods by yourself!!!
+
+/*####################################################################################### */
+//String Methods:
+
+// let myString = "My name is Aayush"
+// console.log(myString.length)
+// console.log(myString.indexOf("Aayush"))
+// console.log(myString.lastIndexOf("Aayush"))
+// console.log(myString.slice(1, 12))
+// console.log(myString.replace("Aayush", "Bhattarai"))
+
+/*############################################################################################ */
+// Dates in JavaScript
+// let myDate = new Date()
+// console.log(myDate.getDay());
+
+// There are lots of dates method in js explore it!!
+
+/*############################################################################################# */
+
+// DOM Manipulation in Js (DOM stands for Document Object Model)
+
+let elem = document.getElementById('click');
+// console.log(elem);
+let elemClass = document.getElementsByClassName('container')
+// console.log(elemClass);
+
+// elemClass[0].style.background = "Yellow";
+elemClass[0].classList.add("bg-primary")
+elemClass[0].classList.add("text-success")
+// console.log(elem.innerHTML);
+// console.log(elem.innerText);
+
+// console.log(elemClass[0].innerHTML);
+// console.log(elemClass[0].innerText);
+
+tn = document.getElementsByTagName('div')
+console.log(tn)
+
+createdElement = document.createElement('p');
+createdElement.innerText = "This is a created paragraph!!!";
+tn[0].appendChild(createdElement);
+
+createdElement2 = document.createElement('b');
+createdElement2.innerText = "This is a created bold!!!";
+
+tn[0].replaceChild(createdElement2, createdElement);
+
+// Selecting using Query
+sel = document.querySelector('.container');
+console.log(sel)
+
+sel = document.querySelectorAll('.container');
+console.log(sel)
