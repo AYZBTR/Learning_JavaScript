@@ -258,35 +258,63 @@ c2 = avg(100, 200);
 
 // DOM Manipulation in Js (DOM stands for Document Object Model)
 
-let elem = document.getElementById('click');
+// let elem = document.getElementById('click');
 // console.log(elem);
-let elemClass = document.getElementsByClassName('container')
+// let elemClass = document.getElementsByClassName('container')
 // console.log(elemClass);
 
 // elemClass[0].style.background = "Yellow";
-elemClass[0].classList.add("bg-primary")
-elemClass[0].classList.add("text-success")
+// elemClass[0].classList.add("bg-primary")
+// elemClass[0].classList.add("text-success")
 // console.log(elem.innerHTML);
 // console.log(elem.innerText);
 
 // console.log(elemClass[0].innerHTML);
 // console.log(elemClass[0].innerText);
 
-tn = document.getElementsByTagName('div')
-console.log(tn)
+// tn = document.getElementsByTagName('div')
+// console.log(tn)
 
-createdElement = document.createElement('p');
-createdElement.innerText = "This is a created paragraph!!!";
-tn[0].appendChild(createdElement);
+// createdElement = document.createElement('p');
+// createdElement.innerText = "This is a created paragraph!!!";
+// tn[0].appendChild(createdElement);
 
-createdElement2 = document.createElement('b');
-createdElement2.innerText = "This is a created bold!!!";
+// createdElement2 = document.createElement('b');
+// createdElement2.innerText = "This is a created bold!!!";
 
-tn[0].replaceChild(createdElement2, createdElement);
+// tn[0].replaceChild(createdElement2, createdElement);
 
-// Selecting using Query
-sel = document.querySelector('.container');
-console.log(sel)
+// // Selecting using Query
+// sel = document.querySelector('.container');
+// console.log(sel)
 
-sel = document.querySelectorAll('.container');
-console.log(sel)
+// sel = document.querySelectorAll('.container');
+// console.log(sel)
+
+
+
+
+/*#################################################################################### */
+// Events in JavaScript
+
+/*Events in JavaScript are actions or occurrences that happen within a web page.They allow you to respond to user interactions,
+browser actions, or other events that occur in the DOM(Document Object Model).You can attach event handlers, also known as event
+listeners, to elements on the page to specify what should happen when an event occurs.
+Event handlers are functions that are executed when an event is triggered. They are typically written as
+callback functions, which means they are passed as arguments to event listener methods and executed when the event is fired.
+
+To attach an event handler to an element, you can use the addEventListener() method.
+This method takes two arguments: the event type (e.g., "click", "keyup", "submit") and the callback function to be executed when the event occurs.
+
+*/
+
+/*############################################################################################# */
+//Arrow function
+// function summ(a, b) {
+//     return (a + b);
+// }
+
+summ = (a, b) => {
+    return (a + b);
+}
+// SetTimeout and setInterval in javaScript
