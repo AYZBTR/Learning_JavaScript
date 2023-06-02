@@ -314,7 +314,69 @@ This method takes two arguments: the event type (e.g., "click", "keyup", "submit
 //     return (a + b);
 // }
 
-summ = (a, b) => {
-    return (a + b);
+// summ = (a, b) => {
+//     return (a + b);
+// }
+log_gar = () => {
+    console.log("I am your log")
 }
 // SetTimeout and setInterval in javaScript
+//setTimeout(log_gar, 2000);
+clr = setInterval(log_gar, 2000);
+
+// Use clearInterval(clr) /clearTimeout(clr) to cancel setInterval/setTimeout
+
+// JavaScript localStorage:
+
+/*
+Local storage is a feature provided by modern web browsers that allows web applications to store 
+data locally on a user's device. It provides a simple key-value storage mechanism and is typically 
+used to store small amounts of data that need to persist across multiple visits or page refreshes.
+
+Here's an example of how to use local storage in JavaScript:
+
+1. Storing data:
+To store data in local storage, you can use the localStorage.setItem() method. 
+It takes two parameters: the key and the value you want to store.
+
+localStorage.setItem('username', 'John');
+
+This will store the value 'John' with the key 'username' in the local storage.
+
+2. Retrieving data:
+To retrieve data from local storage, you can use the localStorage.getItem() method. 
+It takes the key as a parameter and returns the corresponding value.
+
+var username = localStorage.getItem('username');
+console.log(username);  // Output: John
+
+This will retrieve the value associated with the key 'username' 
+from local storage and assign it to the variable username.
+
+3. Removing data:
+To remove data from local storage, you can use the localStorage.removeItem() method. 
+It takes the key as a parameter and removes the corresponding key-value pair.
+
+localStorage.removeItem('username');
+
+This will remove the key-value pair with the key 'username' from local storage.
+
+4. Clearing all data:
+If you want to remove all data stored in local storage, you can use the localStorage.clear() method.
+
+localStorage.clear();
+
+
+NOTE!!! ---> This will remove all key-value pairs stored in local storage.
+
+It's important to note that the data stored in local storage is specific to the domain and protocol of 
+the web page. Each domain and protocol combination has its own separate local storage space, so data stored 
+by one website will not be accessible by another.
+
+Also, be mindful of the storage limit imposed by the browser, which is typically around 5-10MB. 
+If you exceed this limit, attempting to store more data may result in an error.
+
+Local storage is a convenient tool for storing small amounts of data on the client-side, 
+but it's not suitable for sensitive information or large datasets. For those use cases, 
+server-side storage or databases are more appropriate.
+*/
