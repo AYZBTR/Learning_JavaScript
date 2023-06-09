@@ -317,12 +317,12 @@ This method takes two arguments: the event type (e.g., "click", "keyup", "submit
 // summ = (a, b) => {
 //     return (a + b);
 // }
-log_gar = () => {
-    console.log("I am your log")
-}
+// log_gar = () => {
+//     console.log("I am your log")
+// }
 // SetTimeout and setInterval in javaScript
 //setTimeout(log_gar, 2000);
-clr = setInterval(log_gar, 2000);
+// clr = setInterval(log_gar, 2000);
 
 // Use clearInterval(clr) /clearTimeout(clr) to cancel setInterval/setTimeout
 
@@ -380,3 +380,9 @@ Local storage is a convenient tool for storing small amounts of data on the clie
 but it's not suitable for sensitive information or large datasets. For those use cases, 
 server-side storage or databases are more appropriate.
 */
+
+
+// JSON
+obj = { name: "Aayush", age: 20 }
+jso = JSON.stringify(obj);
+console.log(typeof jso)

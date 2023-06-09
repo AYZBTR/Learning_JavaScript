@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Clock</title>
+    <script>
+
+
+function updateClock() {
+  let a = new Date();
+  
+  let date = a.toLocaleDateString(undefined, {dateStyle: 'long'});
+  let hours = formatTwoDigits(a.getHours());
+  let minutes = formatTwoDigits(a.getMinutes());
+  let seconds = formatTwoDigits(a.getSeconds());
+  let time = hours + ":" + minutes + ":" + seconds;
+  document.getElementById("time").innerHTML = time + "<br>on "+ date;
+}
+
+function formatTwoDigits(number) {
+  return number < 10 ? "0" + number : number;
+}
+
+// Call the updateClock function every second
+setInterval(updateClock, 1000);
+
+    </script>
+  </head>
+  <body>
+    <div class="container my-4">
+      <div class="jumbotron">
+        <h1 class="display-4">Current time is: <span id="time"></span></h1>
+        <hr style="width: 100%;" />
+        <p>We are here to show you time of different countries.</p>
+    </div>
+    
+  </body>
+</html>
