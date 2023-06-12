@@ -70,6 +70,14 @@
       <button type="submit" id="add" class="btn btn-primary my-4">
         Add to list
       </button>
+      <button
+        type="submit"
+        id="clear"
+        class="btn btn-primary my-4"
+        onclick="clearstor()"
+      >
+        Clear list
+      </button>
 
       <div id="id" class="my-4"></div>
       <h2>Your Items</h2>
@@ -82,7 +90,7 @@
             <th scope="col">Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tableBody">
           <tr>
             <th scope="row">1</th>
             <td>Grocery shopping</td>
@@ -107,8 +115,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      add = document.getElementById("add");
-      add.addEventListener("click", () => {
+      function getAndUpdate() {
         console.log("Updating List....");
         tit = document.getElementById("title").value;
         desc = document.getElementById("description").value;
@@ -122,9 +129,53 @@
           itemJsonArray.push([tit, desc]);
           localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
         }
+        update();
+      }
+      function update() {
+        if (localStorage.getItem("itemsJson") == null) {
+          itemJsonArray = [];
 
+          localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
+        } else {
+          itemJsonArrayStr = localStorage.getItem("itemsJson");
+          itemJsonArray = JSON.parse(itemJsonArrayStr);
+        }
         // Populate the table
-      });
+        tableBody = document.getElementById("tableBody");
+        let str = "";
+        itemJsonArray.forEach((element, index) => {
+          str += `
+          <tr>
+            <th scope="row">${index + 1}</th>
+            <td>${element[0]}</td>
+            <td>${element[1]}</td>
+            <td><button class="btn btn-primary" onclick = deleted(${index})>Delete</button></td>
+          </tr>
+          `;
+        });
+        tableBody.innerHTML = str;
+      }
+      add = document.getElementById("add");
+      add.addEventListener("click", getAndUpdate);
+      update();
+      function deleted(itemIndex) {
+        console.log("Delete", itemIndex);
+        itemJsonArrayStr = localStorage.getItem("itemsJson");
+        itemJsonArray = JSON.parse(itemJsonArrayStr);
+        // Delete itemIndex element from the arrray
+        itemJsonArray.splice(itemIndex, 1);
+        localStorage.setItem("itemsJson", JSON.stringify(itemJsonArray));
+        update();
+      }
+      function clearstor() {
+        if (
+          confirm("Are you sure that you want to clear all the Todos list?")
+        ) {
+          console.log("Clearing the Storage!");
+          localStorage.clear();
+          update();
+        }
+      }
     </script>
   </body>
 </html>
